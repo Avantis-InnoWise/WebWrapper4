@@ -31,10 +31,10 @@
 		302D352727BFB3AD009E1954 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		302D352927BFB3F2009E1954 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		302D352D27BFC439009E1954 /* Bundle + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle + Extension.swift"; sourceTree = "<group>"; };
-		3030CFA427BD39510022125D /* WebWrapper2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebWrapper2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3030CFA427BD39510022125D /* WebWrapper4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebWrapper4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3030CFA927BD39510022125D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3030CFAC27BD39510022125D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		3030CFAE27BD39510022125D /* WebWrapper2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WebWrapper2.entitlements; sourceTree = "<group>"; };
+		3030CFAE27BD39510022125D /* WebWrapper4.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WebWrapper4.entitlements; sourceTree = "<group>"; };
 		3030CFDE27BD3DD40022125D /* NSButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSButton+Extension.swift"; sourceTree = "<group>"; };
 		3030CFEF27BD59630022125D /* MainScreenController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainScreenController.swift; path = MainScreen/MainScreenController.swift; sourceTree = "<group>"; };
 		3030CFF027BD59630022125D /* MainScreenController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainScreenController.xib; path = MainScreen/MainScreenController.xib; sourceTree = "<group>"; };
@@ -64,7 +64,7 @@
 		3030CF9B27BD39510022125D = {
 			isa = PBXGroup;
 			children = (
-				3030CFA627BD39510022125D /* WebWrapper2 */,
+				3030CFA627BD39510022125D /* WebWrapper4 */,
 				3030CFA527BD39510022125D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,12 +72,12 @@
 		3030CFA527BD39510022125D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3030CFA427BD39510022125D /* WebWrapper2.app */,
+				3030CFA427BD39510022125D /* WebWrapper4.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3030CFA627BD39510022125D /* WebWrapper2 */ = {
+		3030CFA627BD39510022125D /* WebWrapper4 */ = {
 			isa = PBXGroup;
 			children = (
 				3030CFF727BD5D220022125D /* Common */,
@@ -85,9 +85,9 @@
 				3030CFDD27BD3DD40022125D /* Extension */,
 				3030CFD327BD3CCC0022125D /* MainScreen */,
 				3030CFE227BD3DF70022125D /* Assets */,
-				3030CFAE27BD39510022125D /* WebWrapper2.entitlements */,
+				3030CFAE27BD39510022125D /* WebWrapper4.entitlements */,
 			);
-			path = WebWrapper2;
+			path = WebWrapper4;
 			sourceTree = "<group>";
 		};
 		3030CFD327BD3CCC0022125D /* MainScreen */ = {
@@ -158,9 +158,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3030CFA327BD39510022125D /* WebWrapper2 */ = {
+		3030CFA327BD39510022125D /* WebWrapper4 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3030CFC727BD39520022125D /* Build configuration list for PBXNativeTarget "WebWrapper2" */;
+			buildConfigurationList = 3030CFC727BD39520022125D /* Build configuration list for PBXNativeTarget "WebWrapper4" */;
 			buildPhases = (
 				3030CFA027BD39510022125D /* Sources */,
 				3030CFA127BD39510022125D /* Frameworks */,
@@ -170,11 +170,11 @@
 			);
 			dependencies = (
 			);
-			name = WebWrapper2;
+			name = WebWrapper4;
 			packageProductDependencies = (
 			);
 			productName = WebWrapper2;
-			productReference = 3030CFA427BD39510022125D /* WebWrapper2.app */;
+			productReference = 3030CFA427BD39510022125D /* WebWrapper4.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -192,7 +192,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3030CF9F27BD39510022125D /* Build configuration list for PBXProject "WebWrapper2" */;
+			buildConfigurationList = 3030CF9F27BD39510022125D /* Build configuration list for PBXProject "WebWrapper4" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -207,7 +207,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3030CFA327BD39510022125D /* WebWrapper2 */,
+				3030CFA327BD39510022125D /* WebWrapper4 */,
 			);
 		};
 /* End PBXProject section */
@@ -386,7 +386,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = WebWrapper2/WebWrapper2.entitlements;
+				CODE_SIGN_ENTITLEMENTS = WebWrapper4/WebWrapper4.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -402,7 +402,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = yy.WebWrapper2;
+				PRODUCT_BUNDLE_IDENTIFIER = yy.WebWrapper4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -414,7 +414,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = WebWrapper2/WebWrapper2.entitlements;
+				CODE_SIGN_ENTITLEMENTS = WebWrapper4/WebWrapper4.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -430,7 +430,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = yy.WebWrapper2;
+				PRODUCT_BUNDLE_IDENTIFIER = yy.WebWrapper4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -440,7 +440,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3030CF9F27BD39510022125D /* Build configuration list for PBXProject "WebWrapper2" */ = {
+		3030CF9F27BD39510022125D /* Build configuration list for PBXProject "WebWrapper4" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3030CFC527BD39520022125D /* Debug */,
@@ -449,7 +449,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3030CFC727BD39520022125D /* Build configuration list for PBXNativeTarget "WebWrapper2" */ = {
+		3030CFC727BD39520022125D /* Build configuration list for PBXNativeTarget "WebWrapper4" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3030CFC827BD39520022125D /* Debug */,

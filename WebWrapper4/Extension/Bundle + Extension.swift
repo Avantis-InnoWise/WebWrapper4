@@ -1,6 +1,6 @@
 //
 //  Bundle + Extension.swift
-//  WebWrapper2
+//  WebWrapper4
 //
 //  Created by Yahor Yauseyenka on 18.02.22.
 //

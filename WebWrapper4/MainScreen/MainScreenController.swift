@@ -1,6 +1,6 @@
 //
 //  MainScreenController.swift
-//  WebWrapper2
+//  WebWrapper4
 //
 //  Created by Yahor Yauseyenka on 16.02.21.
 //
@@ -9,6 +9,7 @@ import Cocoa
 import WebKit
 
 class MainScreenController: NSViewController {
+    
     private let backButton : NSButton = {
         let backButton = NSButton()
         backButton.makeAdultButton(with: ButtonConstants.pinkColor, radius: ButtonConstants.cornerRadius)
@@ -55,6 +56,7 @@ class MainScreenController: NSViewController {
     }
     
     //MARK: - View configuration
+    
     private func configureWebView() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             if let url = URLConstants.baseURL {
@@ -78,6 +80,7 @@ class MainScreenController: NSViewController {
     }
 
     //MARK: - Setup constrains for all buttons
+    
     private func setupConstrainsForButtons() {
         self.boxView.addSubview(backButton)
         self.boxView.addSubview(homeButton)
@@ -100,6 +103,7 @@ class MainScreenController: NSViewController {
     }
 
     //MARK: - WebView Button Selectors
+    
     @objc private func backButtonClicked() {
         guard let button = self.boxView.subviews.last?.subviews.first(where: { $0.accessibilityIdentifier() == WebButton.back.rawValue }),
               let backButton = button as? NSButton else { return }

@@ -1,6 +1,6 @@
 //
 //  NSButton.swift
-//  WebWrapper2
+//  WebWrapper4
 //
 //  Created by Yahor Yauseyenka on 16.02.21.
 //

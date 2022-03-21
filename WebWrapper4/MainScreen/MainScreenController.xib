@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="MainScreenController" customModule="WebWrapper2" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="MainScreenController" customModule="WebWrapper4" customModuleProvider="target">
             <connections>
                 <outlet property="boxView" destination="ZBQ-zB-kgH" id="Zzx-MI-LzW"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>

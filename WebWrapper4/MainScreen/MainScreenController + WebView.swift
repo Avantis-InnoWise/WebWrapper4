@@ -1,6 +1,6 @@
 //
 //  MainScreenController + WebView.swift
-//  WebWrapper2
+//  WebWrapper4
 //
 //  Created by Yahor Yauseyenka on 16.02.22.
 //
@@ -59,4 +59,3 @@ extension MainScreenController: WKUIDelegate {
         return nil
     }
 }
-

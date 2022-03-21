@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3030CFA327BD39510022125D"
                BuildableName = "WebWrapper2.app"
-               BlueprintName = "WebWrapper2"
-               ReferencedContainer = "container:WebWrapper2.xcodeproj">
+               BlueprintName = "WebWrapper4"
+               ReferencedContainer = "container:WebWrapper4.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "3030CFB227BD39520022125D"
                BuildableName = "WebWrapper2Tests.xctest"
                BlueprintName = "WebWrapper2Tests"
-               ReferencedContainer = "container:WebWrapper2.xcodeproj">
+               ReferencedContainer = "container:WebWrapper4.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -45,7 +45,7 @@
                BlueprintIdentifier = "3030CFBC27BD39520022125D"
                BuildableName = "WebWrapper2UITests.xctest"
                BlueprintName = "WebWrapper2UITests"
-               ReferencedContainer = "container:WebWrapper2.xcodeproj">
+               ReferencedContainer = "container:WebWrapper4.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -66,8 +66,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3030CFA327BD39510022125D"
             BuildableName = "WebWrapper2.app"
-            BlueprintName = "WebWrapper2"
-            ReferencedContainer = "container:WebWrapper2.xcodeproj">
+            BlueprintName = "WebWrapper4"
+            ReferencedContainer = "container:WebWrapper4.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -83,8 +83,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3030CFA327BD39510022125D"
             BuildableName = "WebWrapper2.app"
-            BlueprintName = "WebWrapper2"
-            ReferencedContainer = "container:WebWrapper2.xcodeproj">
+            BlueprintName = "WebWrapper4"
+            ReferencedContainer = "container:WebWrapper4.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
