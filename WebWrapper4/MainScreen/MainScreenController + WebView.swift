@@ -8,6 +8,8 @@
 import Cocoa
 import WebKit
 
+//MARK: - WKNavigationDelegate
+
 extension MainScreenController: WKNavigationDelegate {
     func webView(
         _ webView: WKWebView,
@@ -16,32 +18,34 @@ extension MainScreenController: WKNavigationDelegate {
     ) {
         decisionHandler(.allow)
     }
-
-    func webView(
-        _ webView: WKWebView,
-        didFinish navigation: WKNavigation!) {
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         guard
-            let backButtonView = self.boxView.subviews.last?.subviews.first(where: { $0.accessibilityIdentifier() == WebButton.back.rawValue }),
-            let forwardButtonView = self.boxView.subviews.last?.subviews.first(where: { $0.accessibilityIdentifier() == WebButton.forward.rawValue }),
+            let backButtonView = self.boxView.subviews.last?.subviews.first(where: {
+                $0.accessibilityIdentifier() == WebButton.back.rawValue }),
+            let forwardButtonView = self.boxView.subviews.last?.subviews.first(where: {
+                $0.accessibilityIdentifier() == WebButton.forward.rawValue }),
             let backButton = backButtonView as? NSButton,
             let forwardButton = forwardButtonView as? NSButton
         else { return }
-
-            switch webView.backForwardList.backList.isEmpty {
-            case true:
-                backButton.isEnabled = false
-            case false:
-                backButton.isEnabled = true
-            }
-            
-            switch webView.backForwardList.forwardList.isEmpty {
-            case true:
-                forwardButton.isEnabled = false
-            case false:
-                forwardButton.isEnabled = true
-            }
+        
+        switch webView.backForwardList.backList.isEmpty {
+        case true:
+            backButton.isEnabled = false
+        case false:
+            backButton.isEnabled = true
+        }
+        
+        switch webView.backForwardList.forwardList.isEmpty {
+        case true:
+            forwardButton.isEnabled = false
+        case false:
+            forwardButton.isEnabled = true
+        }
     }
 }
+
+//MARK: - WKUIDelegate
 
 extension MainScreenController: WKUIDelegate {
     func webView(
@@ -50,8 +54,7 @@ extension MainScreenController: WKUIDelegate {
         for navigationAction: WKNavigationAction,
         windowFeatures: WKWindowFeatures
     ) -> WKWebView? {
-        if navigationAction.targetFrame == nil ||
-            navigationAction.targetFrame?.isMainFrame == false {
+        if navigationAction.targetFrame == nil || navigationAction.targetFrame?.isMainFrame == false {
             if let url = navigationAction.request.url {
                 self.webView.load(URLRequest(url: url))
             }

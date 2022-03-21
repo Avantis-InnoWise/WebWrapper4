@@ -4,11 +4,11 @@
 //
 //  Created by Yahor Yauseyenka on 18.02.22.
 //
+
 import Cocoa
 
 extension Bundle {
-    var displayName: String? {
-        return object(forInfoDictionaryKey: "CFBundleDisplayName") as? String
+    var displayNickname: String? {
+        return object(forInfoDictionaryKey: "CFBundleDisplayNickname") as? String
     }
 }
-

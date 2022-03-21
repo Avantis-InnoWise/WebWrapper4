@@ -8,7 +8,7 @@
 import Cocoa
 
 extension NSButton {
-    func makeAdultButton(with color: NSColor, radius: CGFloat) {
+    func createAdultButton(with color: NSColor, radius: CGFloat) {
         self.bezelStyle = .texturedSquare
         self.wantsLayer = true
         self.isBordered = false

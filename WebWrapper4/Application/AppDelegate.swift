@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                styleMask: [.miniaturizable, .closable, .resizable, .titled],
                                backing: .buffered,
                                defer: false)
-        self.window?.title = Bundle.main.displayName ?? "WebWrapper4"
+        self.window?.title = Bundle.main.displayNickname ?? titleConstants.WebWrapper4
         self.window?.contentViewController = MainScreenController()
         self.window?.makeKeyAndOrderFront(nil)
     }
