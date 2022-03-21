@@ -60,63 +60,10 @@ class MainScreenController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         webView.navigationDelegate = self
         webView.uiDelegate = self
-        
         setupView()
         setupWebView()
-    }
-    
-    //MARK: - PublicFunctions
-    
-    private func setupWebView() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + Constants.deadLine) {
-            if let url = URLConstants.baseURL {
-                self.webView.load(URLRequest(url: url))
-            }
-        }
-    }
-    
-    private func setupView() {
-        boxView.fillColor = .windowBackgroundColor
-        boxView.cornerRadius = .zero
-        
-        self.configureConstrainsForButtons()
-        
-        if webView.backForwardList.backList.isEmpty {
-            backButton.isEnabled = false
-        }
-        if webView.backForwardList.forwardList.isEmpty {
-            forwardButton.isEnabled = false
-        }
-    }
-    
-    //MARK: - SetupConstrains
-    
-    private func configureConstrainsForButtons() {
-        self.boxView.addSubview(backButton)
-        self.boxView.addSubview(homeButton)
-        self.boxView.addSubview(forwardButton)
-        
-        NSLayoutConstraint.activate(
-            [
-                self.backButton.widthAnchor.constraint(equalToConstant: ConstraintConstants.backButtonWidth),
-                self.backButton.topAnchor.constraint(equalTo: self.boxView.topAnchor, constant: ButtonConstants.backForwardInsets.top),
-                self.backButton.leadingAnchor.constraint(equalTo: self.boxView.leadingAnchor, constant: ButtonConstants.backForwardInsets.left),
-                self.backButton.bottomAnchor.constraint(equalTo: self.boxView.bottomAnchor, constant: ButtonConstants.backForwardInsets.bottom),
-                
-                self.homeButton.widthAnchor.constraint(equalToConstant: ConstraintConstants.homeButtonWidth),
-                self.homeButton.centerXAnchor.constraint(equalTo: self.boxView.centerXAnchor),
-                self.homeButton.topAnchor.constraint(equalTo: self.boxView.topAnchor, constant: ButtonConstants.backForwardInsets.top),
-                self.homeButton.bottomAnchor.constraint(equalTo: self.boxView.bottomAnchor, constant: ButtonConstants.backForwardInsets.bottom),
-                
-                self.forwardButton.widthAnchor.constraint(equalToConstant: ConstraintConstants.forwardButtonWidth),
-                self.forwardButton.topAnchor.constraint(equalTo: self.boxView.topAnchor, constant: ButtonConstants.backForwardInsets.top),
-                self.forwardButton.trailingAnchor.constraint(equalTo: self.boxView.trailingAnchor, constant: ButtonConstants.backForwardInsets.right),
-                self.forwardButton.bottomAnchor.constraint(equalTo: self.boxView.bottomAnchor, constant: ButtonConstants.backForwardInsets.bottom)
-            ]
-        )
     }
     
     //MARK: - ButtonSelectors
@@ -140,5 +87,59 @@ class MainScreenController: NSViewController {
     @objc private func homeButtonClicked() {
         guard let url = URLConstants.baseURL else { return }
         self.webView.load(URLRequest(url: url))
+    }
+}
+
+//MARK: - PrivateExtension MainScreenController
+
+private extension MainScreenController {
+    
+    func setupWebView() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + Constants.deadLine) {
+            if let url = URLConstants.baseURL {
+                self.webView.load(URLRequest(url: url))
+            }
+        }
+    }
+    
+    func setupView() {
+        boxView.fillColor = .windowBackgroundColor
+        boxView.cornerRadius = .zero
+        
+        self.configureConstrainsForButtons()
+        
+        if webView.backForwardList.backList.isEmpty {
+            backButton.isEnabled = false
+        }
+        if webView.backForwardList.forwardList.isEmpty {
+            forwardButton.isEnabled = false
+        }
+    }
+    
+    //MARK: - SetupConstrains
+    
+    func configureConstrainsForButtons() {
+        self.boxView.addSubview(backButton)
+        self.boxView.addSubview(homeButton)
+        self.boxView.addSubview(forwardButton)
+        
+        NSLayoutConstraint.activate(
+            [
+                self.backButton.widthAnchor.constraint(equalToConstant: ConstraintConstants.backButtonWidth),
+                self.backButton.topAnchor.constraint(equalTo: self.boxView.topAnchor, constant: ButtonConstants.backForwardInsets.top),
+                self.backButton.leadingAnchor.constraint(equalTo: self.boxView.leadingAnchor, constant: ButtonConstants.backForwardInsets.left),
+                self.backButton.bottomAnchor.constraint(equalTo: self.boxView.bottomAnchor, constant: ButtonConstants.backForwardInsets.bottom),
+                
+                self.homeButton.widthAnchor.constraint(equalToConstant: ConstraintConstants.homeButtonWidth),
+                self.homeButton.centerXAnchor.constraint(equalTo: self.boxView.centerXAnchor),
+                self.homeButton.topAnchor.constraint(equalTo: self.boxView.topAnchor, constant: ButtonConstants.backForwardInsets.top),
+                self.homeButton.bottomAnchor.constraint(equalTo: self.boxView.bottomAnchor, constant: ButtonConstants.backForwardInsets.bottom),
+                
+                self.forwardButton.widthAnchor.constraint(equalToConstant: ConstraintConstants.forwardButtonWidth),
+                self.forwardButton.topAnchor.constraint(equalTo: self.boxView.topAnchor, constant: ButtonConstants.backForwardInsets.top),
+                self.forwardButton.trailingAnchor.constraint(equalTo: self.boxView.trailingAnchor, constant: ButtonConstants.backForwardInsets.right),
+                self.forwardButton.bottomAnchor.constraint(equalTo: self.boxView.bottomAnchor, constant: ButtonConstants.backForwardInsets.bottom)
+            ]
+        )
     }
 }
