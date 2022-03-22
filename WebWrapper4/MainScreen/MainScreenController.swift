@@ -8,7 +8,7 @@
 import Cocoa
 import WebKit
 
-    //MARK: - PrivateEnum
+    //MARK: - Constants
 
 private enum Constants {
     static let deadLine: CGFloat = 0.5
@@ -65,12 +65,12 @@ class MainScreenController: NSViewController {
         webView.uiDelegate = self
         
         setupView()
-        setupWebView()
+        webViewDelay()
     }
     
     //MARK: - PublicFunctions
     
-    private func setupWebView() {
+    private func webViewDelay() {
         DispatchQueue.main.asyncAfter(deadline: .now() + Constants.deadLine) {
             if let url = URLConstants.baseURL {
                 self.webView.load(URLRequest(url: url))

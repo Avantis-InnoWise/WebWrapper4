@@ -33,6 +33,6 @@ struct URLConstants {
 
 //MARK: - Title Constants
 
-struct titleConstants {
+struct GeneralConstants {
     static let WebWrapper4 = "WebWrapper4"
 }

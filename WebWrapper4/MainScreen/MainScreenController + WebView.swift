@@ -29,19 +29,8 @@ extension MainScreenController: WKNavigationDelegate {
             let forwardButton = forwardButtonView as? NSButton
         else { return }
         
-        switch webView.backForwardList.backList.isEmpty {
-        case true:
-            backButton.isEnabled = false
-        case false:
-            backButton.isEnabled = true
-        }
-        
-        switch webView.backForwardList.forwardList.isEmpty {
-        case true:
-            forwardButton.isEnabled = false
-        case false:
-            forwardButton.isEnabled = true
-        }
+        backButton.isEnabled = !webView.backForwardList.backList.isEmpty
+        forwardButton.isEnabled = !webView.backForwardList.forwardList.isEmpty
     }
 }
 
