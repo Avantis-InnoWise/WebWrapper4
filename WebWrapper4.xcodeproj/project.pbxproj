@@ -103,10 +103,10 @@
 		3030CFDA27BD3D840022125D /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				302D352927BFB3F2009E1954 /* Info.plist */,
-				302D352727BFB3AD009E1954 /* InfoPlist.strings */,
-				3030CFAB27BD39510022125D /* MainMenu.xib */,
 				302D351F27BE7D08009E1954 /* AppDelegate.swift */,
+				3030CFAB27BD39510022125D /* MainMenu.xib */,
+				302D352727BFB3AD009E1954 /* InfoPlist.strings */,
+				302D352927BFB3F2009E1954 /* Info.plist */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -114,8 +114,8 @@
 		3030CFDD27BD3DD40022125D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				3030CFDE27BD3DD40022125D /* NSButton.swift */,
 				302D352D27BFC439009E1954 /* Bundle.swift */,
+				3030CFDE27BD3DD40022125D /* NSButton.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
