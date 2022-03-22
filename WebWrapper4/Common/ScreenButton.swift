@@ -7,10 +7,8 @@
 
 import Foundation
 
-enum WebButton {
-    case back
-    case home
-    case forward
+enum ScreenButton {
+    case back, home, forward
     
     var rawValue: String {
         switch self {

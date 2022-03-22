@@ -10,7 +10,7 @@ import WebKit
 
 //MARK: - WKNavigationDelegate
 
-extension MainScreenController: WKNavigationDelegate {
+extension MainController: WKNavigationDelegate {
     func webView(
         _ webView: WKWebView,
         decidePolicyFor navigationAction: WKNavigationAction,
@@ -22,9 +22,9 @@ extension MainScreenController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         guard
             let backButtonView = self.boxView.subviews.last?.subviews.first(where: {
-                $0.accessibilityIdentifier() == WebButton.back.rawValue }),
+                $0.accessibilityIdentifier() == ScreenButton.back.rawValue }),
             let forwardButtonView = self.boxView.subviews.last?.subviews.first(where: {
-                $0.accessibilityIdentifier() == WebButton.forward.rawValue }),
+                $0.accessibilityIdentifier() == ScreenButton.forward.rawValue }),
             let backButton = backButtonView as? NSButton,
             let forwardButton = forwardButtonView as? NSButton
         else { return }
@@ -36,7 +36,7 @@ extension MainScreenController: WKNavigationDelegate {
 
 //MARK: - WKUIDelegate
 
-extension MainScreenController: WKUIDelegate {
+extension MainController: WKUIDelegate {
     func webView(
         _ webView: WKWebView,
         createWebViewWith configuration: WKWebViewConfiguration,

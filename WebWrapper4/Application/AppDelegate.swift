@@ -18,7 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                backing: .buffered,
                                defer: false)
         self.window?.title = Bundle.main.displayTitle ?? GeneralConstants.WebWrapper4
-        self.window?.contentViewController = MainScreenController()
+        self.window?.contentViewController = MainController()
         self.window?.makeKeyAndOrderFront(nil)
     }
 
