@@ -18,7 +18,7 @@
 		3030CFAD27BD39510022125D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3030CFAB27BD39510022125D /* MainMenu.xib */; };
 		3030CFE027BD3DD40022125D /* NSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030CFDE27BD3DD40022125D /* NSButton.swift */; };
 		3030CFF127BD59630022125D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030CFEF27BD59630022125D /* HomeViewController.swift */; };
-		3030CFF227BD59630022125D /* MainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3030CFF027BD59630022125D /* MainController.xib */; };
+		3030CFF227BD59630022125D /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3030CFF027BD59630022125D /* HomeViewController.xib */; };
 		3030CFF927BD5D2D0022125D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030CFF827BD5D2D0022125D /* Constants.swift */; };
 		3030D01527BE48D60022125D /* ScreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030D01427BE48D60022125D /* ScreenButton.swift */; };
 /* End PBXBuildFile section */
@@ -37,7 +37,7 @@
 		3030CFAE27BD39510022125D /* WebWrapper4.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WebWrapper4.entitlements; sourceTree = "<group>"; };
 		3030CFDE27BD3DD40022125D /* NSButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSButton.swift; sourceTree = "<group>"; };
 		3030CFEF27BD59630022125D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = MainScreen/HomeViewController.swift; sourceTree = "<group>"; };
-		3030CFF027BD59630022125D /* MainController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainController.xib; path = MainScreen/MainController.xib; sourceTree = "<group>"; };
+		3030CFF027BD59630022125D /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeViewController.xib; path = MainScreen/HomeViewController.xib; sourceTree = "<group>"; };
 		3030CFF827BD5D2D0022125D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3030D01427BE48D60022125D /* ScreenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,7 +93,7 @@
 			children = (
 				3030CFEF27BD59630022125D /* HomeViewController.swift */,
 				302D351D27BE7903009E1954 /* HomeViewController + WebView.swift */,
-				3030CFF027BD59630022125D /* MainController.xib */,
+				3030CFF027BD59630022125D /* HomeViewController.xib */,
 			);
 			name = HomeWebView;
 			path = ..;
@@ -227,7 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				302D352627BE7D30009E1954 /* Localizable.strings in Resources */,
-				3030CFF227BD59630022125D /* MainController.xib in Resources */,
+				3030CFF227BD59630022125D /* HomeViewController.xib in Resources */,
 				302D352A27BFB3F2009E1954 /* Info.plist in Resources */,
 				3030CFAA27BD39510022125D /* Assets.xcassets in Resources */,
 				3030CFAD27BD39510022125D /* MainMenu.xib in Resources */,
