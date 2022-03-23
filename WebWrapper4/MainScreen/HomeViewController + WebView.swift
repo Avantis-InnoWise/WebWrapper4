@@ -1,16 +1,9 @@
-//
-//  MainScreenController + WebView.swift
-//  WebWrapper4
-//
-//  Created by Yahor Yauseyenka on 16.02.22.
-//
-
 import Cocoa
 import WebKit
 
 //MARK: - WKNavigationDelegate
 
-extension MainController: WKNavigationDelegate {
+extension HomeViewController: WKNavigationDelegate {
     func webView(
         _ webView: WKWebView,
         decidePolicyFor navigationAction: WKNavigationAction,
@@ -36,7 +29,7 @@ extension MainController: WKNavigationDelegate {
 
 //MARK: - WKUIDelegate
 
-extension MainController: WKUIDelegate {
+extension HomeViewController: WKUIDelegate {
     func webView(
         _ webView: WKWebView,
         createWebViewWith configuration: WKWebViewConfiguration,

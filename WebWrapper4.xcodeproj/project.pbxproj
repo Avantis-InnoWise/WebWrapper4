@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		302D351E27BE7903009E1954 /* MainController + WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302D351D27BE7903009E1954 /* MainController + WebView.swift */; };
+		302D351E27BE7903009E1954 /* HomeViewController + WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302D351D27BE7903009E1954 /* HomeViewController + WebView.swift */; };
 		302D352027BE7D08009E1954 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302D351F27BE7D08009E1954 /* AppDelegate.swift */; };
-		302D352527BE7D30009E1954 /* Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302D352127BE7D30009E1954 /* Localized.swift */; };
+		302D352527BE7D30009E1954 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302D352127BE7D30009E1954 /* Localization.swift */; };
 		302D352627BE7D30009E1954 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 302D352327BE7D30009E1954 /* Localizable.strings */; };
 		302D352827BFB3AD009E1954 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 302D352727BFB3AD009E1954 /* InfoPlist.strings */; };
 		302D352A27BFB3F2009E1954 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 302D352927BFB3F2009E1954 /* Info.plist */; };
@@ -17,16 +17,16 @@
 		3030CFAA27BD39510022125D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3030CFA927BD39510022125D /* Assets.xcassets */; };
 		3030CFAD27BD39510022125D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3030CFAB27BD39510022125D /* MainMenu.xib */; };
 		3030CFE027BD3DD40022125D /* NSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030CFDE27BD3DD40022125D /* NSButton.swift */; };
-		3030CFF127BD59630022125D /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030CFEF27BD59630022125D /* MainController.swift */; };
+		3030CFF127BD59630022125D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030CFEF27BD59630022125D /* HomeViewController.swift */; };
 		3030CFF227BD59630022125D /* MainController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3030CFF027BD59630022125D /* MainController.xib */; };
 		3030CFF927BD5D2D0022125D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030CFF827BD5D2D0022125D /* Constants.swift */; };
 		3030D01527BE48D60022125D /* ScreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030D01427BE48D60022125D /* ScreenButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		302D351D27BE7903009E1954 /* MainController + WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MainController + WebView.swift"; path = "MainScreen/MainController + WebView.swift"; sourceTree = "<group>"; };
+		302D351D27BE7903009E1954 /* HomeViewController + WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "HomeViewController + WebView.swift"; path = "MainScreen/HomeViewController + WebView.swift"; sourceTree = "<group>"; };
 		302D351F27BE7D08009E1954 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		302D352127BE7D30009E1954 /* Localized.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localized.swift; sourceTree = "<group>"; };
+		302D352127BE7D30009E1954 /* Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		302D352427BE7D30009E1954 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
 		302D352727BFB3AD009E1954 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		302D352927BFB3F2009E1954 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -36,7 +36,7 @@
 		3030CFAC27BD39510022125D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		3030CFAE27BD39510022125D /* WebWrapper4.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WebWrapper4.entitlements; sourceTree = "<group>"; };
 		3030CFDE27BD3DD40022125D /* NSButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSButton.swift; sourceTree = "<group>"; };
-		3030CFEF27BD59630022125D /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainController.swift; path = MainScreen/MainController.swift; sourceTree = "<group>"; };
+		3030CFEF27BD59630022125D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = MainScreen/HomeViewController.swift; sourceTree = "<group>"; };
 		3030CFF027BD59630022125D /* MainController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainController.xib; path = MainScreen/MainController.xib; sourceTree = "<group>"; };
 		3030CFF827BD5D2D0022125D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		3030D01427BE48D60022125D /* ScreenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenButton.swift; sourceTree = "<group>"; };
@@ -81,7 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				3030CFDA27BD3D840022125D /* Application */,
-				597BA4EF27E9FB1E005C254C /* BusinessLogic */,
 				597BA4F027E9FB32005C254C /* UI */,
 				597BA4F327E9FB61005C254C /* Resources */,
 				3030CFAE27BD39510022125D /* WebWrapper4.entitlements */,
@@ -89,14 +88,14 @@
 			path = WebWrapper4;
 			sourceTree = "<group>";
 		};
-		3030CFD327BD3CCC0022125D /* Main */ = {
+		3030CFD327BD3CCC0022125D /* HomeWebView */ = {
 			isa = PBXGroup;
 			children = (
-				3030CFEF27BD59630022125D /* MainController.swift */,
-				302D351D27BE7903009E1954 /* MainController + WebView.swift */,
+				3030CFEF27BD59630022125D /* HomeViewController.swift */,
+				302D351D27BE7903009E1954 /* HomeViewController + WebView.swift */,
 				3030CFF027BD59630022125D /* MainController.xib */,
 			);
-			name = Main;
+			name = HomeWebView;
 			path = ..;
 			sourceTree = "<group>";
 		};
@@ -141,16 +140,9 @@
 			isa = PBXGroup;
 			children = (
 				302D352227BE7D30009E1954 /* en.lproj */,
-				302D352127BE7D30009E1954 /* Localized.swift */,
+				302D352127BE7D30009E1954 /* Localization.swift */,
 			);
 			path = Localization;
-			sourceTree = "<group>";
-		};
-		597BA4EF27E9FB1E005C254C /* BusinessLogic */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = BusinessLogic;
 			sourceTree = "<group>";
 		};
 		597BA4F027E9FB32005C254C /* UI */ = {
@@ -158,7 +150,7 @@
 			children = (
 				3030CFF727BD5D220022125D /* Common */,
 				3030CFDD27BD3DD40022125D /* Extensions */,
-				3030CFD327BD3CCC0022125D /* Main */,
+				3030CFD327BD3CCC0022125D /* HomeWebView */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -251,10 +243,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3030D01527BE48D60022125D /* ScreenButton.swift in Sources */,
-				302D351E27BE7903009E1954 /* MainController + WebView.swift in Sources */,
+				302D351E27BE7903009E1954 /* HomeViewController + WebView.swift in Sources */,
 				302D352027BE7D08009E1954 /* AppDelegate.swift in Sources */,
-				302D352527BE7D30009E1954 /* Localized.swift in Sources */,
-				3030CFF127BD59630022125D /* MainController.swift in Sources */,
+				302D352527BE7D30009E1954 /* Localization.swift in Sources */,
+				3030CFF127BD59630022125D /* HomeViewController.swift in Sources */,
 				302D352E27BFC439009E1954 /* Bundle.swift in Sources */,
 				3030CFF927BD5D2D0022125D /* Constants.swift in Sources */,
 				3030CFE027BD3DD40022125D /* NSButton.swift in Sources */,

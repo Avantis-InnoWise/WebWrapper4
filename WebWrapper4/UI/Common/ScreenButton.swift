@@ -1,10 +1,3 @@
-//
-//  WebButton.swift
-//  WebWrapper4
-//
-//  Created by Yahor Yauseyenka on 17.02.22.
-//
-
 import Foundation
 
 enum ScreenButton {

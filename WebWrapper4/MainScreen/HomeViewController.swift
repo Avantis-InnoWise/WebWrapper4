@@ -1,10 +1,3 @@
-//
-//  MainScreenController.swift
-//  WebWrapper4
-//
-//  Created by Yahor Yauseyenka on 16.02.21.
-//
-
 import Cocoa
 import WebKit
 
@@ -17,7 +10,7 @@ private enum Constant {
     static let homeButtonBackgroundColor = NSColor.brown.cgColor
 }
 
-class MainController: NSViewController {
+class HomeViewController: NSViewController {
     
     //MARK: - IBOutlets
     
