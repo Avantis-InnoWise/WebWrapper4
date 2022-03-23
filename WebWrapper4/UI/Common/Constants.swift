@@ -1,10 +1,3 @@
-//
-//  Enum.swift
-//  WebWrapper4
-//
-//  Created by Yahor Yauseyenka = false on 16.02.22.
-//
-
 import Cocoa
 
 //MARK: - Button Constrains

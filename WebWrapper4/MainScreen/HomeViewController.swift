@@ -1,10 +1,3 @@
-//
-//  MainScreenController.swift
-//  WebWrapper4
-//
-//  Created by Yahor Yauseyenka on 16.02.21.
-//
-
 import Cocoa
 import WebKit
 
@@ -12,9 +5,12 @@ import WebKit
 
 private enum Constant {
     static let deadLine: CGFloat = 0.5
+    static let backButtonBackgroundColor = NSColor.brown.cgColor
+    static let forwardButtonBackgroundColor = NSColor.brown.cgColor
+    static let homeButtonBackgroundColor = NSColor.brown.cgColor
 }
 
-class MainController: NSViewController {
+class HomeViewController: NSViewController {
     
     //MARK: - IBOutlets
     
@@ -28,7 +24,7 @@ class MainController: NSViewController {
         backButton.settingsButton(with: ButtonConstants.pinkColor, radius: ButtonConstants.cornerRadius)
         backButton.setAccessibilityIdentifier(ScreenButton.back.rawValue)
         backButton.translatesAutoresizingMaskIntoConstraints = false
-        backButton.layer?.backgroundColor = NSColor.brown.cgColor
+        backButton.layer?.backgroundColor = Constant.backButtonBackgroundColor
         backButton.action = #selector(backClicked)
         backButton.title = .localized.backButton
         return backButton
@@ -39,7 +35,7 @@ class MainController: NSViewController {
         forwardButton.settingsButton(with: ButtonConstants.pinkColor, radius: ButtonConstants.cornerRadius)
         forwardButton.setAccessibilityIdentifier(ScreenButton.forward.rawValue)
         forwardButton.translatesAutoresizingMaskIntoConstraints = false
-        forwardButton.layer?.backgroundColor = NSColor.brown.cgColor
+        forwardButton.layer?.backgroundColor = Constant.forwardButtonBackgroundColor
         forwardButton.action = #selector(forwardClicked)
         forwardButton.title = .localized.forwardButton
         return forwardButton
@@ -50,7 +46,7 @@ class MainController: NSViewController {
         homeButton.settingsButton(with: ButtonConstants.pinkColor, radius: ButtonConstants.cornerRadius)
         homeButton.setAccessibilityIdentifier(ScreenButton.home.rawValue)
         homeButton.translatesAutoresizingMaskIntoConstraints = false
-        homeButton.layer?.backgroundColor = NSColor.brown.cgColor
+        homeButton.layer?.backgroundColor = Constant.homeButtonBackgroundColor
         homeButton.action = #selector(homeClicked)
         homeButton.title = .localized.homeButton
         return homeButton

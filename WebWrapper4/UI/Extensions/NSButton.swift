@@ -1,10 +1,3 @@
-//
-//  NSButton.swift
-//  WebWrapper4
-//
-//  Created by Yahor Yauseyenka on 16.02.21.
-//
-
 import Cocoa
 
 extension NSButton {
