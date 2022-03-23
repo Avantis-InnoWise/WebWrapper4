@@ -64,7 +64,37 @@ class HomeViewController: NSViewController {
         webViewDelay()
     }
     
-    //MARK: - PrivateFunctions
+    //MARK: - ButtonSelectors
+    
+    @objc private func backClicked() {
+        guard let button = boxView.subviews.last?.subviews.first(where: {
+            $0.accessibilityIdentifier() == ScreenButton.back.rawValue
+        }),
+              let backButton = button as? NSButton else { return }
+        if backButton.isEnabled == true {
+            webView.goBack()
+        }
+    }
+    
+    @objc private func forwardClicked() {
+        guard let button = boxView.subviews.last?.subviews.first(where: {
+            $0.accessibilityIdentifier() == ScreenButton.forward.rawValue
+        }),
+              let forwardButton = button as? NSButton else { return }
+        if forwardButton.isEnabled == true {
+            webView.goForward()
+        }
+    }
+    
+    @objc private func homeClicked() {
+        guard let url = URLConstants.baseURL else { return }
+        webView.load(URLRequest(url: url))
+    }
+}
+
+//MARK: - PrivateExtension
+
+private extension HomeViewController {
     
     private func webViewDelay() {
         DispatchQueue.main.asyncAfter(deadline: .now() + Constant.deadLine) { [weak self] in
@@ -121,32 +151,5 @@ class HomeViewController: NSViewController {
                                                       constant: ButtonConstants.backForwardInsets.bottom)
             ]
         )
-    }
-    
-    //MARK: - ButtonSelectors
-    
-    @objc private func backClicked() {
-        guard let button = boxView.subviews.last?.subviews.first(where: {
-            $0.accessibilityIdentifier() == ScreenButton.back.rawValue
-        }),
-              let backButton = button as? NSButton else { return }
-        if backButton.isEnabled == true {
-            webView.goBack()
-        }
-    }
-    
-    @objc private func forwardClicked() {
-        guard let button = boxView.subviews.last?.subviews.first(where: {
-            $0.accessibilityIdentifier() == ScreenButton.forward.rawValue
-        }),
-              let forwardButton = button as? NSButton else { return }
-        if forwardButton.isEnabled == true {
-            webView.goForward()
-        }
-    }
-    
-    @objc private func homeClicked() {
-        guard let url = URLConstants.baseURL else { return }
-        webView.load(URLRequest(url: url))
     }
 }
