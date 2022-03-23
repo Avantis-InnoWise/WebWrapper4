@@ -1,14 +1,7 @@
-//
-//  NSButton.swift
-//  WebWrapper4
-//
-//  Created by Yahor Yauseyenka on 16.02.21.
-//
-
 import Cocoa
 
 extension NSButton {
-    func makeAdultButton(with color: NSColor, radius: CGFloat) {
+    func settingsButton(with color: NSColor, radius: CGFloat) {
         self.bezelStyle = .texturedSquare
         self.wantsLayer = true
         self.isBordered = false

@@ -1,16 +1,7 @@
-//
-//  WebButton.swift
-//  WebWrapper4
-//
-//  Created by Yahor Yauseyenka on 17.02.22.
-//
-
 import Foundation
 
-enum WebButton {
-    case back
-    case home
-    case forward
+enum ScreenButton {
+    case back, home, forward
     
     var rawValue: String {
         switch self {

@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  WebWrapper4
-//
-//  Created by Yahor Yauseyenka on 16.02.22.
-//
-
 import Cocoa
 
 @main
@@ -17,8 +10,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                styleMask: [.miniaturizable, .closable, .resizable, .titled],
                                backing: .buffered,
                                defer: false)
-        self.window?.title = Bundle.main.displayName ?? "WebWrapper4"
-        self.window?.contentViewController = MainScreenController()
+        self.window?.title = Bundle.main.displayTitle ?? GeneralConstants.WebWrapper4
+        self.window?.contentViewController = HomeViewController()
         self.window?.makeKeyAndOrderFront(nil)
     }
 
