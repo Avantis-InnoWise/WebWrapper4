@@ -1,16 +1,9 @@
-//
-//  MainScreenController + WebView.swift
-//  WebWrapper4
-//
-//  Created by Yahor Yauseyenka on 16.02.22.
-//
-
 import Cocoa
 import WebKit
 
 //MARK: - WKNavigationDelegate
 
-extension MainScreenController: WKNavigationDelegate {
+extension HomeViewController: WKNavigationDelegate {
     func webView(
         _ webView: WKWebView,
         decidePolicyFor navigationAction: WKNavigationAction,
@@ -22,32 +15,21 @@ extension MainScreenController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         guard
             let backButtonView = self.boxView.subviews.last?.subviews.first(where: {
-                $0.accessibilityIdentifier() == WebButton.back.rawValue }),
+                $0.accessibilityIdentifier() == ScreenButton.back.rawValue }),
             let forwardButtonView = self.boxView.subviews.last?.subviews.first(where: {
-                $0.accessibilityIdentifier() == WebButton.forward.rawValue }),
+                $0.accessibilityIdentifier() == ScreenButton.forward.rawValue }),
             let backButton = backButtonView as? NSButton,
             let forwardButton = forwardButtonView as? NSButton
         else { return }
         
-        switch webView.backForwardList.backList.isEmpty {
-        case true:
-            backButton.isEnabled = false
-        case false:
-            backButton.isEnabled = true
-        }
-        
-        switch webView.backForwardList.forwardList.isEmpty {
-        case true:
-            forwardButton.isEnabled = false
-        case false:
-            forwardButton.isEnabled = true
-        }
+        backButton.isEnabled = !webView.backForwardList.backList.isEmpty
+        forwardButton.isEnabled = !webView.backForwardList.forwardList.isEmpty
     }
 }
 
 //MARK: - WKUIDelegate
 
-extension MainScreenController: WKUIDelegate {
+extension HomeViewController: WKUIDelegate {
     func webView(
         _ webView: WKWebView,
         createWebViewWith configuration: WKWebViewConfiguration,

@@ -1,10 +1,3 @@
-//
-//  Enum.swift
-//  WebWrapper4
-//
-//  Created by Yahor Yauseyenka = false on 16.02.22.
-//
-
 import Cocoa
 
 //MARK: - Button Constrains
@@ -33,6 +26,6 @@ struct URLConstants {
 
 //MARK: - Title Constants
 
-struct titleConstants {
+struct GeneralConstants {
     static let WebWrapper4 = "WebWrapper4"
 }
