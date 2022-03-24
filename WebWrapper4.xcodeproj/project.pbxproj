@@ -81,7 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				3030CFDA27BD3D840022125D /* Application */,
-				597BA4F027E9FB32005C254C /* UI */,
+				597BA4F027E9FB32005C254C /* Presentation */,
 				597BA4F327E9FB61005C254C /* Resources */,
 				3030CFAE27BD39510022125D /* WebWrapper4.entitlements */,
 			);
@@ -119,13 +119,12 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		3030CFF727BD5D220022125D /* Common */ = {
+		3030CFF727BD5D220022125D /* Constants */ = {
 			isa = PBXGroup;
 			children = (
 				3030CFF827BD5D2D0022125D /* Constants.swift */,
-				3030CFFA27BD5D380022125D /* Enumerate */,
 			);
-			path = Common;
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		3030CFFA27BD5D380022125D /* Enumerate */ = {
@@ -134,6 +133,7 @@
 				3030D01427BE48D60022125D /* ScreenButton.swift */,
 			);
 			name = Enumerate;
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		3030D00E27BE43E60022125D /* Localization */ = {
@@ -145,14 +145,15 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
-		597BA4F027E9FB32005C254C /* UI */ = {
+		597BA4F027E9FB32005C254C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				3030CFF727BD5D220022125D /* Common */,
+				3030CFF727BD5D220022125D /* Constants */,
+				3030CFFA27BD5D380022125D /* Enumerate */,
 				3030CFDD27BD3DD40022125D /* Extensions */,
 				3030CFD327BD3CCC0022125D /* HomeWebView */,
 			);
-			path = UI;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		597BA4F327E9FB61005C254C /* Resources */ = {
