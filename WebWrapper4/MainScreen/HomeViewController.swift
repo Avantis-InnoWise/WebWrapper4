@@ -5,9 +5,6 @@ import WebKit
 
 private enum Constant {
     static let deadLine: CGFloat = 0.5
-    static let backButtonBackgroundColor = NSColor.brown.cgColor
-    static let forwardButtonBackgroundColor = NSColor.brown.cgColor
-    static let homeButtonBackgroundColor = NSColor.brown.cgColor
 }
 
 class HomeViewController: NSViewController {
@@ -23,33 +20,27 @@ class HomeViewController: NSViewController {
         let backButton = NSButton()
         backButton.settingsButton(with: ButtonConstants.pinkColor, radius: ButtonConstants.cornerRadius)
         backButton.setAccessibilityIdentifier(ScreenButton.back.rawValue)
-        backButton.translatesAutoresizingMaskIntoConstraints = false
-        backButton.layer?.backgroundColor = Constant.backButtonBackgroundColor
         backButton.action = #selector(backClicked)
         backButton.title = .localized.backButton
         return backButton
     }()
     
-    private let forwardButton: NSButton = {
-        let forwardButton = NSButton()
-        forwardButton.settingsButton(with: ButtonConstants.pinkColor, radius: ButtonConstants.cornerRadius)
-        forwardButton.setAccessibilityIdentifier(ScreenButton.forward.rawValue)
-        forwardButton.translatesAutoresizingMaskIntoConstraints = false
-        forwardButton.layer?.backgroundColor = Constant.forwardButtonBackgroundColor
-        forwardButton.action = #selector(forwardClicked)
-        forwardButton.title = .localized.forwardButton
-        return forwardButton
+    private let secondaryButton: NSButton = {
+        let secondaryButton = NSButton()
+        secondaryButton.settingsButton(with: ButtonConstants.pinkColor, radius: ButtonConstants.cornerRadius)
+        secondaryButton.setAccessibilityIdentifier(ScreenButton.secondary.rawValue)
+        secondaryButton.action = #selector(secondaryClicked)
+        secondaryButton.title = .localized.secondaryButton
+        return secondaryButton
     }()
     
-    private let homeButton: NSButton = {
-        let homeButton = NSButton()
-        homeButton.settingsButton(with: ButtonConstants.pinkColor, radius: ButtonConstants.cornerRadius)
-        homeButton.setAccessibilityIdentifier(ScreenButton.home.rawValue)
-        homeButton.translatesAutoresizingMaskIntoConstraints = false
-        homeButton.layer?.backgroundColor = Constant.homeButtonBackgroundColor
-        homeButton.action = #selector(homeClicked)
-        homeButton.title = .localized.homeButton
-        return homeButton
+    private let generalButton: NSButton = {
+        let generalButton = NSButton()
+        generalButton.settingsButton(with: ButtonConstants.pinkColor, radius: ButtonConstants.cornerRadius)
+        generalButton.setAccessibilityIdentifier(ScreenButton.general.rawValue)
+        generalButton.action = #selector(generalCliked)
+        generalButton.title = .localized.generalButton
+        return generalButton
     }()
     
     //MARK: - LifeCycle
@@ -59,14 +50,14 @@ class HomeViewController: NSViewController {
         
         webView.navigationDelegate = self
         webView.uiDelegate = self
-        
+        addSubViews()
         setupView()
         webViewDelay()
     }
     
     //MARK: - ButtonSelectors
     
-    @objc private func backClicked() {
+    @IBAction private func backClicked(sender: NSButton) {
         guard let button = boxView.subviews.last?.subviews.first(where: {
             $0.accessibilityIdentifier() == ScreenButton.back.rawValue
         }),
@@ -76,9 +67,9 @@ class HomeViewController: NSViewController {
         }
     }
     
-    @objc private func forwardClicked() {
+    @IBAction private func secondaryClicked(sender: NSButton) {
         guard let button = boxView.subviews.last?.subviews.first(where: {
-            $0.accessibilityIdentifier() == ScreenButton.forward.rawValue
+            $0.accessibilityIdentifier() == ScreenButton.secondary.rawValue
         }),
               let forwardButton = button as? NSButton else { return }
         if forwardButton.isEnabled == true {
@@ -86,7 +77,7 @@ class HomeViewController: NSViewController {
         }
     }
     
-    @objc private func homeClicked() {
+    @IBAction private func generalCliked(sender: NSButton) {
         guard let url = URLConstants.baseURL else { return }
         webView.load(URLRequest(url: url))
     }
@@ -96,7 +87,7 @@ class HomeViewController: NSViewController {
 
 private extension HomeViewController {
     
-    private func webViewDelay() {
+    func webViewDelay() {
         DispatchQueue.main.asyncAfter(deadline: .now() + Constant.deadLine) { [weak self] in
             if let url = URLConstants.baseURL {
                 self?.webView.load(URLRequest(url: url))
@@ -104,26 +95,35 @@ private extension HomeViewController {
         }
     }
     
-    private func setupView() {
-        boxView.fillColor = .windowBackgroundColor
+    func addSubViews() {
+        boxView.addSubview(backButton)
+        boxView.addSubview(generalButton)
+        boxView.addSubview(secondaryButton)
+    }
+    
+    func setupView() {
         boxView.cornerRadius = .zero
+        boxView.fillColor = .windowBackgroundColor
+        constrainsButtons()
         
-        self.constrainsButtons()
-        
-        if webView.backForwardList.backList.isEmpty {
+        guard !webView.backForwardList.backList.isEmpty
+        else {
             backButton.isEnabled = false
+            return
         }
-        if webView.backForwardList.forwardList.isEmpty {
-            forwardButton.isEnabled = false
+        guard !webView.backForwardList.forwardList.isEmpty
+        else {
+            secondaryButton.isEnabled = false
+            return
         }
     }
     
     //MARK: - SetupConstrains
     
-    private func constrainsButtons() {
-        boxView.addSubview(backButton)
-        boxView.addSubview(homeButton)
-        boxView.addSubview(forwardButton)
+    func constrainsButtons() {
+        backButton.translatesAutoresizingMaskIntoConstraints = false
+        secondaryButton.translatesAutoresizingMaskIntoConstraints = false
+        generalButton.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate(
             [
@@ -135,19 +135,19 @@ private extension HomeViewController {
                 backButton.bottomAnchor.constraint(equalTo: boxView.bottomAnchor,
                                                    constant: ButtonConstants.backForwardInsets.bottom),
                 
-                homeButton.widthAnchor.constraint(equalToConstant: ConstraintConstants.homeButtonWidth),
-                homeButton.centerXAnchor.constraint(equalTo: boxView.centerXAnchor),
-                homeButton.topAnchor.constraint(equalTo: boxView.topAnchor,
+                generalButton.widthAnchor.constraint(equalToConstant: ConstraintConstants.generalButton),
+                generalButton.centerXAnchor.constraint(equalTo: boxView.centerXAnchor),
+                generalButton.topAnchor.constraint(equalTo: boxView.topAnchor,
                                                 constant: ButtonConstants.backForwardInsets.top),
-                homeButton.bottomAnchor.constraint(equalTo: boxView.bottomAnchor,
+                generalButton.bottomAnchor.constraint(equalTo: boxView.bottomAnchor,
                                                    constant: ButtonConstants.backForwardInsets.bottom),
                 
-                forwardButton.widthAnchor.constraint(equalToConstant: ConstraintConstants.forwardButtonWidth),
-                forwardButton.topAnchor.constraint(equalTo: boxView.topAnchor,
+                secondaryButton.widthAnchor.constraint(equalToConstant: ConstraintConstants.secondaryButtonWidth),
+                secondaryButton.topAnchor.constraint(equalTo: boxView.topAnchor,
                                                    constant: ButtonConstants.backForwardInsets.top),
-                forwardButton.trailingAnchor.constraint(equalTo: boxView.trailingAnchor,
+                secondaryButton.trailingAnchor.constraint(equalTo: boxView.trailingAnchor,
                                                         constant: ButtonConstants.backForwardInsets.right),
-                forwardButton.bottomAnchor.constraint(equalTo: boxView.bottomAnchor,
+                secondaryButton.bottomAnchor.constraint(equalTo: boxView.bottomAnchor,
                                                       constant: ButtonConstants.backForwardInsets.bottom)
             ]
         )

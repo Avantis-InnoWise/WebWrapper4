@@ -14,16 +14,16 @@ extension HomeViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         guard
-            let backButtonView = self.boxView.subviews.last?.subviews.first(where: {
+            let backButtonView = boxView.subviews.last?.subviews.first(where: {
                 $0.accessibilityIdentifier() == ScreenButton.back.rawValue }),
-            let forwardButtonView = self.boxView.subviews.last?.subviews.first(where: {
-                $0.accessibilityIdentifier() == ScreenButton.forward.rawValue }),
+            let secondaryButtonView = boxView.subviews.last?.subviews.first(where: {
+                $0.accessibilityIdentifier() == ScreenButton.secondary.rawValue }),
             let backButton = backButtonView as? NSButton,
-            let forwardButton = forwardButtonView as? NSButton
+            let secondaryButton = secondaryButtonView as? NSButton
         else { return }
         
         backButton.isEnabled = !webView.backForwardList.backList.isEmpty
-        forwardButton.isEnabled = !webView.backForwardList.forwardList.isEmpty
+        secondaryButton.isEnabled = !webView.backForwardList.forwardList.isEmpty
     }
 }
 
@@ -36,7 +36,7 @@ extension HomeViewController: WKUIDelegate {
         for navigationAction: WKNavigationAction,
         windowFeatures: WKWindowFeatures
     ) -> WKWebView? {
-        if navigationAction.targetFrame == nil || navigationAction.targetFrame?.isMainFrame == false {
+        if navigationAction.targetFrame?.isMainFrame == false || navigationAction.targetFrame == nil {
             if let url = navigationAction.request.url {
                 self.webView.load(URLRequest(url: url))
             }

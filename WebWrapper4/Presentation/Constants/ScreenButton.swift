@@ -1,16 +1,16 @@
 import Foundation
 
 enum ScreenButton {
-    case back, home, forward
+    case back, general, secondary
     
     var rawValue: String {
         switch self {
         case .back:
             return "back_button"
-        case .home:
-            return "home_button"
-        case .forward:
-            return "forward_button"
+        case .general:
+            return "general_button"
+        case .secondary:
+            return "secondary_button"
         }
     }
 }

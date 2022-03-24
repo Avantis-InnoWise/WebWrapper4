@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		302D351E27BE7903009E1954 /* HomeViewController + WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302D351D27BE7903009E1954 /* HomeViewController + WebView.swift */; };
+		302D351E27BE7903009E1954 /* HomeViewController+WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302D351D27BE7903009E1954 /* HomeViewController+WebView.swift */; };
 		302D352027BE7D08009E1954 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302D351F27BE7D08009E1954 /* AppDelegate.swift */; };
 		302D352527BE7D30009E1954 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302D352127BE7D30009E1954 /* Localization.swift */; };
 		302D352627BE7D30009E1954 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 302D352327BE7D30009E1954 /* Localizable.strings */; };
@@ -24,7 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		302D351D27BE7903009E1954 /* HomeViewController + WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "HomeViewController + WebView.swift"; path = "MainScreen/HomeViewController + WebView.swift"; sourceTree = "<group>"; };
+		302D351D27BE7903009E1954 /* HomeViewController+WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "HomeViewController+WebView.swift"; path = "MainScreen/HomeViewController+WebView.swift"; sourceTree = "<group>"; };
 		302D351F27BE7D08009E1954 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		302D352127BE7D30009E1954 /* Localization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
 		302D352427BE7D30009E1954 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Localizable.strings; sourceTree = "<group>"; };
@@ -53,14 +53,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		302D352227BE7D30009E1954 /* en.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				302D352327BE7D30009E1954 /* Localizable.strings */,
-			);
-			path = en.lproj;
-			sourceTree = "<group>";
-		};
 		3030CF9B27BD39510022125D = {
 			isa = PBXGroup;
 			children = (
@@ -81,9 +73,10 @@
 			isa = PBXGroup;
 			children = (
 				3030CFDA27BD3D840022125D /* Application */,
+				5961725227EC8CD300FA098E /* Business */,
 				597BA4F027E9FB32005C254C /* Presentation */,
 				597BA4F327E9FB61005C254C /* Resources */,
-				3030CFAE27BD39510022125D /* WebWrapper4.entitlements */,
+				5961725327EC8D0200FA098E /* Supporting Files */,
 			);
 			path = WebWrapper4;
 			sourceTree = "<group>";
@@ -92,7 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				3030CFEF27BD59630022125D /* HomeViewController.swift */,
-				302D351D27BE7903009E1954 /* HomeViewController + WebView.swift */,
+				302D351D27BE7903009E1954 /* HomeViewController+WebView.swift */,
 				3030CFF027BD59630022125D /* HomeViewController.xib */,
 			);
 			name = HomeWebView;
@@ -139,10 +132,25 @@
 		3030D00E27BE43E60022125D /* Localization */ = {
 			isa = PBXGroup;
 			children = (
-				302D352227BE7D30009E1954 /* en.lproj */,
 				302D352127BE7D30009E1954 /* Localization.swift */,
+				302D352327BE7D30009E1954 /* Localizable.strings */,
 			);
 			path = Localization;
+			sourceTree = "<group>";
+		};
+		5961725227EC8CD300FA098E /* Business */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Business;
+			sourceTree = "<group>";
+		};
+		5961725327EC8D0200FA098E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3030CFAE27BD39510022125D /* WebWrapper4.entitlements */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		597BA4F027E9FB32005C254C /* Presentation */ = {
@@ -244,7 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3030D01527BE48D60022125D /* ScreenButton.swift in Sources */,
-				302D351E27BE7903009E1954 /* HomeViewController + WebView.swift in Sources */,
+				302D351E27BE7903009E1954 /* HomeViewController+WebView.swift in Sources */,
 				302D352027BE7D08009E1954 /* AppDelegate.swift in Sources */,
 				302D352527BE7D30009E1954 /* Localization.swift in Sources */,
 				3030CFF127BD59630022125D /* HomeViewController.swift in Sources */,
@@ -327,7 +335,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -382,7 +390,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;

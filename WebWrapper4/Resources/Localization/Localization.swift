@@ -22,17 +22,17 @@ public struct Localization {
         )
     }
     
-    var homeButton: String {
+    var generalButton: String {
         NSLocalizedString(
             "home.button",
             tableName: nil,
             bundle: .main,
-            value: "Home",
+            value: "Homepage",
             comment: "Home Button Title"
         )
     }
     
-    var forwardButton: String {
+    var secondaryButton: String {
         NSLocalizedString(
             "forward.button",
             tableName: nil,
