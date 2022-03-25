@@ -1,7 +1,7 @@
 import Cocoa
 
 extension Bundle {
-    var displayTitle: String? {
-        return object(forInfoDictionaryKey: "CFBundleDisplayName") as? String
+    var bundleDisplayName: String? {
+        object(forInfoDictionaryKey: "CFBundleDisplayName") as? String
     }
 }

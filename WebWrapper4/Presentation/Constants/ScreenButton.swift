@@ -5,12 +5,9 @@ enum ScreenButton {
     
     var rawValue: String {
         switch self {
-        case .back:
-            return "back_button"
-        case .general:
-            return "general_button"
-        case .secondary:
-            return "secondary_button"
+        case .back: return "back_button"
+        case .general: return "general_button"
+        case .secondary: return "secondary_button"
         }
     }
 }

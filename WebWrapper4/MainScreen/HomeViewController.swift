@@ -3,8 +3,14 @@ import WebKit
 
     //MARK: - Constants
 
-private enum Constant {
+private enum Dimensions {
     static let deadLine: CGFloat = 0.5
+    static let generalButton: CGFloat = 120
+    static let backButtonWidth: CGFloat = 80
+    static let secondaryButtonWidth: CGFloat = 80
+    static let backForwardInsets: NSEdgeInsets = NSEdgeInsets(top: 20, left: 30,  bottom: -20, right: -30)
+    static let pinkColor: NSColor = .systemPurple
+    static let cornerRadius: CGFloat = 10
 }
 
 class HomeViewController: NSViewController {
@@ -14,32 +20,33 @@ class HomeViewController: NSViewController {
     @IBOutlet weak var boxView: NSBox!
     @IBOutlet weak var webView: WKWebView!
     
+    //MARK: - PublicProperties
+
+    private var viewModel: HomeViewModelProtocol
+    
     //MARK: - PrivateProperties
     
     private let backButton : NSButton = {
         let backButton = NSButton()
-        backButton.settingsButton(with: ButtonConstants.pinkColor, radius: ButtonConstants.cornerRadius)
+        backButton.settingsButton(Dimensions.pinkColor, title: .localized.backButton, radius: Dimensions.cornerRadius)
         backButton.setAccessibilityIdentifier(ScreenButton.back.rawValue)
         backButton.action = #selector(backClicked)
-        backButton.title = .localized.backButton
         return backButton
     }()
     
     private let secondaryButton: NSButton = {
         let secondaryButton = NSButton()
-        secondaryButton.settingsButton(with: ButtonConstants.pinkColor, radius: ButtonConstants.cornerRadius)
+        secondaryButton.settingsButton(Dimensions.pinkColor, title: .localized.secondaryButton, radius: Dimensions.cornerRadius)
         secondaryButton.setAccessibilityIdentifier(ScreenButton.secondary.rawValue)
         secondaryButton.action = #selector(secondaryClicked)
-        secondaryButton.title = .localized.secondaryButton
         return secondaryButton
     }()
     
     private let generalButton: NSButton = {
         let generalButton = NSButton()
-        generalButton.settingsButton(with: ButtonConstants.pinkColor, radius: ButtonConstants.cornerRadius)
+        generalButton.settingsButton(Dimensions.pinkColor, title: .localized.generalButton, radius: Dimensions.cornerRadius)
         generalButton.setAccessibilityIdentifier(ScreenButton.general.rawValue)
         generalButton.action = #selector(generalCliked)
-        generalButton.title = .localized.generalButton
         return generalButton
     }()
     
@@ -53,6 +60,16 @@ class HomeViewController: NSViewController {
         addSubViews()
         setupView()
         webViewDelay()
+    }
+    
+    init(with viewModel: HomeViewModelProtocol) {
+        self.viewModel = viewModel
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     //MARK: - ButtonSelectors
@@ -78,8 +95,9 @@ class HomeViewController: NSViewController {
     }
     
     @IBAction private func generalCliked(sender: NSButton) {
-        guard let url = URLConstants.baseURL else { return }
-        webView.load(URLRequest(url: url))
+        viewModel.downloadingWeb { request in
+            webView.load(request)
+        }
     }
 }
 
@@ -88,10 +106,10 @@ class HomeViewController: NSViewController {
 private extension HomeViewController {
     
     func webViewDelay() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + Constant.deadLine) { [weak self] in
-            if let url = URLConstants.baseURL {
-                self?.webView.load(URLRequest(url: url))
-            }
+        DispatchQueue.main.asyncAfter(deadline: .now() + Dimensions.deadLine) { [weak self] in
+            self?.viewModel.downloadingWeb(with: { request in
+                self?.webView.load(request)
+            })
         }
     }
     
@@ -127,29 +145,73 @@ private extension HomeViewController {
         
         NSLayoutConstraint.activate(
             [
-                backButton.widthAnchor.constraint(equalToConstant: ConstraintConstants.backButtonWidth),
+                backButton.widthAnchor.constraint(equalToConstant: Dimensions.backButtonWidth),
                 backButton.topAnchor.constraint(equalTo: boxView.topAnchor,
-                                                constant: ButtonConstants.backForwardInsets.top),
+                                                constant: Dimensions.backForwardInsets.top),
                 backButton.leadingAnchor.constraint(equalTo: boxView.leadingAnchor,
-                                                    constant: ButtonConstants.backForwardInsets.left),
+                                                    constant: Dimensions.backForwardInsets.left),
                 backButton.bottomAnchor.constraint(equalTo: boxView.bottomAnchor,
-                                                   constant: ButtonConstants.backForwardInsets.bottom),
+                                                   constant: Dimensions.backForwardInsets.bottom),
                 
-                generalButton.widthAnchor.constraint(equalToConstant: ConstraintConstants.generalButton),
+                generalButton.widthAnchor.constraint(equalToConstant: Dimensions.generalButton),
                 generalButton.centerXAnchor.constraint(equalTo: boxView.centerXAnchor),
                 generalButton.topAnchor.constraint(equalTo: boxView.topAnchor,
-                                                constant: ButtonConstants.backForwardInsets.top),
+                                                constant: Dimensions.backForwardInsets.top),
                 generalButton.bottomAnchor.constraint(equalTo: boxView.bottomAnchor,
-                                                   constant: ButtonConstants.backForwardInsets.bottom),
+                                                   constant: Dimensions.backForwardInsets.bottom),
                 
-                secondaryButton.widthAnchor.constraint(equalToConstant: ConstraintConstants.secondaryButtonWidth),
+                secondaryButton.widthAnchor.constraint(equalToConstant: Dimensions.secondaryButtonWidth),
                 secondaryButton.topAnchor.constraint(equalTo: boxView.topAnchor,
-                                                   constant: ButtonConstants.backForwardInsets.top),
+                                                   constant: Dimensions.backForwardInsets.top),
                 secondaryButton.trailingAnchor.constraint(equalTo: boxView.trailingAnchor,
-                                                        constant: ButtonConstants.backForwardInsets.right),
+                                                        constant: Dimensions.backForwardInsets.right),
                 secondaryButton.bottomAnchor.constraint(equalTo: boxView.bottomAnchor,
-                                                      constant: ButtonConstants.backForwardInsets.bottom)
+                                                      constant: Dimensions.backForwardInsets.bottom)
             ]
         )
+    }
+}
+
+//MARK: - WKNavigationDelegate
+
+extension HomeViewController: WKNavigationDelegate {
+    func webView(
+        _ webView: WKWebView,
+        decidePolicyFor navigationAction: WKNavigationAction,
+        decisionHandler: @escaping (WKNavigationActionPolicy) -> Void
+    ) {
+        decisionHandler(.allow)
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        guard
+            let backButtonView = boxView.subviews.last?.subviews.first(where: {
+                $0.accessibilityIdentifier() == ScreenButton.back.rawValue }),
+            let secondaryButtonView = boxView.subviews.last?.subviews.first(where: {
+                $0.accessibilityIdentifier() == ScreenButton.secondary.rawValue }),
+            let backButton = backButtonView as? NSButton,
+            let secondaryButton = secondaryButtonView as? NSButton
+        else { return }
+        
+        backButton.isEnabled = !webView.backForwardList.backList.isEmpty
+        secondaryButton.isEnabled = !webView.backForwardList.forwardList.isEmpty
+    }
+}
+
+//MARK: - WKUIDelegate
+
+extension HomeViewController: WKUIDelegate {
+    func webView(
+        _ webView: WKWebView,
+        createWebViewWith configuration: WKWebViewConfiguration,
+        for navigationAction: WKNavigationAction,
+        windowFeatures: WKWindowFeatures
+    ) -> WKWebView? {
+        if navigationAction.targetFrame?.isMainFrame == false || navigationAction.targetFrame == nil {
+            if let url = navigationAction.request.url {
+                self.webView.load(URLRequest(url: url))
+            }
+        }
+        return nil
     }
 }

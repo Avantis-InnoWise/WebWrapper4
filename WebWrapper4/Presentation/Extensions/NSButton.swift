@@ -1,12 +1,13 @@
 import Cocoa
 
 extension NSButton {
-    func settingsButton(with color: NSColor, radius: CGFloat) {
-        bezelStyle = .texturedSquare
+    func settingsButton(_ color: NSColor, title: String, radius: CGFloat) {
+        self.title = title
         wantsLayer = true
         isBordered = false
+        bezelStyle = .texturedSquare
         layer?.backgroundColor = color.cgColor
-        layer?.masksToBounds = true
         layer?.cornerRadius = radius
+        layer?.masksToBounds = true
     }
 }
