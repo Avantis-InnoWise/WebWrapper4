@@ -28,7 +28,9 @@ class HomeViewController: NSViewController {
     
     private let backButton : NSButton = {
         let backButton = NSButton()
-        backButton.settingsButton(Dimensions.pinkColor, title: .localized.backButton, radius: Dimensions.cornerRadius)
+        backButton.settingsButton(Dimensions.pinkColor,
+                                  title: .localized.backButton,
+                                  radius: Dimensions.cornerRadius)
         backButton.setAccessibilityIdentifier(ScreenButton.back.rawValue)
         backButton.action = #selector(backClicked)
         return backButton
@@ -36,7 +38,9 @@ class HomeViewController: NSViewController {
     
     private let secondaryButton: NSButton = {
         let secondaryButton = NSButton()
-        secondaryButton.settingsButton(Dimensions.pinkColor, title: .localized.secondaryButton, radius: Dimensions.cornerRadius)
+        secondaryButton.settingsButton(Dimensions.pinkColor,
+                                       title: .localized.secondaryButton,
+                                       radius: Dimensions.cornerRadius)
         secondaryButton.setAccessibilityIdentifier(ScreenButton.secondary.rawValue)
         secondaryButton.action = #selector(secondaryClicked)
         return secondaryButton
@@ -44,7 +48,9 @@ class HomeViewController: NSViewController {
     
     private let generalButton: NSButton = {
         let generalButton = NSButton()
-        generalButton.settingsButton(Dimensions.pinkColor, title: .localized.generalButton, radius: Dimensions.cornerRadius)
+        generalButton.settingsButton(Dimensions.pinkColor,
+                                     title: .localized.generalButton,
+                                     radius: Dimensions.cornerRadius)
         generalButton.setAccessibilityIdentifier(ScreenButton.general.rawValue)
         generalButton.action = #selector(generalCliked)
         return generalButton
@@ -54,13 +60,14 @@ class HomeViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         webView.navigationDelegate = self
         webView.uiDelegate = self
         addSubViews()
         setupView()
         webViewDelay()
     }
+    
+    //- MARK: - Init
     
     init(with viewModel: HomeViewModelProtocol) {
         self.viewModel = viewModel
@@ -72,7 +79,7 @@ class HomeViewController: NSViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: - ButtonSelectors
+    //MARK: - IBActions
     
     @IBAction private func backClicked(sender: NSButton) {
         guard let button = boxView.subviews.last?.subviews.first(where: {

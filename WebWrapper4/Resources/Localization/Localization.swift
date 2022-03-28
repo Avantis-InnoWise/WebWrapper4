@@ -1,6 +1,8 @@
 import Cocoa
 
 public struct Localization {
+
+    //MARK: - PublicProperties
     
     var appTitle: String {
         NSLocalizedString(
@@ -42,6 +44,8 @@ public struct Localization {
         )
     }
 }
+
+//MARK: - Extensions
 
 public extension String {
     static var localized = Localization()

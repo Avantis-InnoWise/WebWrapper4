@@ -4,7 +4,11 @@ import Foundation
 
 final class HomeViewModel {
     
+    //MARK: - PublicProperties
+    
     private let url: URL
+    
+    //MARK: - Init
     
     init(url: URL) {
         self.url = url
