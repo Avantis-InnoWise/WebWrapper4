@@ -1,8 +1,6 @@
 import Cocoa
 
 public struct Localization {
-
-    //MARK: - PublicProperties
     
     var appTitle: String {
         NSLocalizedString(

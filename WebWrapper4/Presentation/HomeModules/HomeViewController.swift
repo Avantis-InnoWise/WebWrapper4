@@ -20,11 +20,9 @@ class HomeViewController: NSViewController {
     @IBOutlet weak var boxView: NSBox!
     @IBOutlet weak var webView: WKWebView!
     
-    //MARK: - PublicProperties
+    //MARK: - PrivateProperties
 
     private var viewModel: HomeViewModelProtocol
-    
-    //MARK: - PrivateProperties
     
     private let backButton : NSButton = {
         let backButton = NSButton()
