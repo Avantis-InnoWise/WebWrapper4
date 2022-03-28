@@ -15,13 +15,13 @@
 		3030CFAA27BD39510022125D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3030CFA927BD39510022125D /* Assets.xcassets */; };
 		3030CFAD27BD39510022125D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3030CFAB27BD39510022125D /* MainMenu.xib */; };
 		3030CFE027BD3DD40022125D /* NSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030CFDE27BD3DD40022125D /* NSButton.swift */; };
-		3030CFF127BD59630022125D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030CFEF27BD59630022125D /* HomeViewController.swift */; };
-		3030CFF227BD59630022125D /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3030CFF027BD59630022125D /* HomeViewController.xib */; };
 		3030CFF927BD5D2D0022125D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030CFF827BD5D2D0022125D /* Constants.swift */; };
-		3030D01527BE48D60022125D /* ScreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3030D01427BE48D60022125D /* ScreenButton.swift */; };
+		5910668427F18E8900899867 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5910668027F18E8900899867 /* HomeViewController.swift */; };
+		5910668527F18E8900899867 /* HomeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5910668127F18E8900899867 /* HomeAssembly.swift */; };
+		5910668627F18E8900899867 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5910668227F18E8900899867 /* HomeViewModel.swift */; };
+		5910668727F18E8900899867 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5910668327F18E8900899867 /* HomeViewController.xib */; };
+		5910668927F18E9C00899867 /* ScreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5910668827F18E9C00899867 /* ScreenButton.swift */; };
 		5961725527EC9DD900FA098E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 302D352427BE7D30009E1954 /* Localizable.strings */; };
-		5961725827ECA47E00FA098E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5961725727ECA47E00FA098E /* HomeViewModel.swift */; };
-		59A8E30627EDB63A00CE8F8D /* HomeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A8E30527EDB63A00CE8F8D /* HomeAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,12 +36,12 @@
 		3030CFAC27BD39510022125D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		3030CFAE27BD39510022125D /* WebWrapper4.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WebWrapper4.entitlements; sourceTree = "<group>"; };
 		3030CFDE27BD3DD40022125D /* NSButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSButton.swift; sourceTree = "<group>"; };
-		3030CFEF27BD59630022125D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = MainScreen/HomeViewController.swift; sourceTree = "<group>"; };
-		3030CFF027BD59630022125D /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = HomeViewController.xib; path = MainScreen/HomeViewController.xib; sourceTree = "<group>"; };
 		3030CFF827BD5D2D0022125D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		3030D01427BE48D60022125D /* ScreenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenButton.swift; sourceTree = "<group>"; };
-		5961725727ECA47E00FA098E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		59A8E30527EDB63A00CE8F8D /* HomeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembly.swift; sourceTree = "<group>"; };
+		5910668027F18E8900899867 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Presentation/HomeModules/HomeViewController.swift; sourceTree = "<group>"; };
+		5910668127F18E8900899867 /* HomeAssembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeAssembly.swift; path = Presentation/HomeModules/HomeAssembly.swift; sourceTree = "<group>"; };
+		5910668227F18E8900899867 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewModel.swift; path = Presentation/HomeModules/HomeViewModel.swift; sourceTree = "<group>"; };
+		5910668327F18E8900899867 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeViewController.xib; path = Presentation/HomeModules/HomeViewController.xib; sourceTree = "<group>"; };
+		5910668827F18E9C00899867 /* ScreenButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScreenButton.swift; path = WebWrapper4/Presentation/Enumerate/ScreenButton.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,10 +86,10 @@
 		3030CFD327BD3CCC0022125D /* HomeModules */ = {
 			isa = PBXGroup;
 			children = (
-				59A8E30527EDB63A00CE8F8D /* HomeAssembly.swift */,
-				5961725727ECA47E00FA098E /* HomeViewModel.swift */,
-				3030CFEF27BD59630022125D /* HomeViewController.swift */,
-				3030CFF027BD59630022125D /* HomeViewController.xib */,
+				5910668127F18E8900899867 /* HomeAssembly.swift */,
+				5910668027F18E8900899867 /* HomeViewController.swift */,
+				5910668327F18E8900899867 /* HomeViewController.xib */,
+				5910668227F18E8900899867 /* HomeViewModel.swift */,
 			);
 			name = HomeModules;
 			path = ..;
@@ -126,7 +126,7 @@
 		3030CFFA27BD5D380022125D /* Enumerate */ = {
 			isa = PBXGroup;
 			children = (
-				3030D01427BE48D60022125D /* ScreenButton.swift */,
+				5910668827F18E9C00899867 /* ScreenButton.swift */,
 			);
 			name = Enumerate;
 			path = Constants;
@@ -239,11 +239,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5961725527EC9DD900FA098E /* Localizable.strings in Resources */,
-				3030CFF227BD59630022125D /* HomeViewController.xib in Resources */,
 				302D352A27BFB3F2009E1954 /* Info.plist in Resources */,
 				3030CFAA27BD39510022125D /* Assets.xcassets in Resources */,
 				3030CFAD27BD39510022125D /* MainMenu.xib in Resources */,
 				302D352827BFB3AD009E1954 /* InfoPlist.strings in Resources */,
+				5910668727F18E8900899867 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,14 +254,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3030D01527BE48D60022125D /* ScreenButton.swift in Sources */,
-				59A8E30627EDB63A00CE8F8D /* HomeAssembly.swift in Sources */,
-				5961725827ECA47E00FA098E /* HomeViewModel.swift in Sources */,
+				5910668627F18E8900899867 /* HomeViewModel.swift in Sources */,
 				302D352027BE7D08009E1954 /* AppDelegate.swift in Sources */,
 				302D352527BE7D30009E1954 /* Localization.swift in Sources */,
-				3030CFF127BD59630022125D /* HomeViewController.swift in Sources */,
 				302D352E27BFC439009E1954 /* Bundle.swift in Sources */,
 				3030CFF927BD5D2D0022125D /* Constants.swift in Sources */,
+				5910668427F18E8900899867 /* HomeViewController.swift in Sources */,
+				5910668527F18E8900899867 /* HomeAssembly.swift in Sources */,
+				5910668927F18E9C00899867 /* ScreenButton.swift in Sources */,
 				3030CFE027BD3DD40022125D /* NSButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,7 +400,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = WebWrapper4/WebWrapper4.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "WebWrapper4/Supporting Files/WebWrapper4.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -428,7 +428,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = WebWrapper4/WebWrapper4.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "WebWrapper4/Supporting Files/WebWrapper4.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
